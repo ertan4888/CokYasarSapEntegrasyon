@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="https://tr06bw4devas1.cokyasar.local/sap/bc/srt/wsdl/flv_10002A111AD1/srvc_url/sap/bc/srt/rfc/sap/zcyhr_ws001/200/zcyhr_ws_001/zcyhr_ws_001?sap-client=200" filename="zcyhr_ws_001.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

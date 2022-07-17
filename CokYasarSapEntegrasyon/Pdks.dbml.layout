@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 17.625" name="Pdks">
+  <DataContextMoniker Name="/PdksDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e5a95de2-e0db-4989-ab39-a0b42961ef04" absoluteBounds="5, 1.375, 2, 16.001202799479167">
+      <DataClassMoniker Name="/PdksDataContext/PERSONEL1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="09508d66-64eb-4855-b862-243a2a565db9" absoluteBounds="5.0150000000000006, 1.835, 1.9700000000000002, 15.441202799479166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4b64292-d18a-4d76-b85f-14347eed73f8" absoluteBounds="2.625, 1.375, 2, 2.5401025390625">
+      <DataClassMoniker Name="/PdksDataContext/AYPUAN1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="912338cc-87d7-44a1-ad49-971a35a7ba4b" absoluteBounds="2.64, 1.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1f60f46-f6f3-4c6f-bc0a-b6eaa54538b0" absoluteBounds="0.5, 1.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/PdksDataContext/NARSOFT_SAP_CALKODU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="afb60b01-292c-4de0-b8e5-f89ff38fddc9" absoluteBounds="0.51500000000000012, 1.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="950ed1f8-51e0-4861-a53e-6d00b6b70ffd" absoluteBounds="0.5, 4, 2, 12.732078450520833">
+      <DataClassMoniker Name="/PdksDataContext/ENT_PERSONEL_TEST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cd76a389-9231-4fab-a447-6c04b45cfc74" absoluteBounds="0.51500000000000012, 4.46, 1.9700000000000002, 12.172078450520832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d30a49e7-e1c5-45e5-a9ef-4d4675a1a251" absoluteBounds="5.125, 0.625, 2, 2.5401025390625">
+      <DataClassMoniker Name="/PdksDataContext/Nar_Log" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f4407611-eac0-464b-be5c-edca11bd25d6" absoluteBounds="5.14, 1.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="32b1856b-68ab-4482-a6b5-c23820732603" absoluteBounds="3.75, 4.625, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/PdksDataContext/PUANTAJ1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8aceb71b-3ded-4658-b8e9-d9531a83e14f" absoluteBounds="3.765, 5.085, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3c4ba02c-8875-4863-83df-ed64bcf94985" absoluteBounds="7.875, 1.625, 2, 4.2708154296875">
+      <DataClassMoniker Name="/PdksDataContext/NARSOFT_SAP_VRKODU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="010e151d-dec4-490c-a4de-bb12783793fc" absoluteBounds="7.89, 2.085, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c04d10b5-dbae-4375-b743-3201c86f5ada" absoluteBounds="6.5, 3.625, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/PdksDataContext/ENT_GUNIZIN_TEST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b31d71ad-85df-4a5f-a821-5275ce2c9bfe" absoluteBounds="6.515, 4.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b8bdfcf2-7146-4cd1-9bc0-89e20f0be239" absoluteBounds="3, 0.5, 2.125, 2.3478011067708335">
+      <DataClassMoniker Name="/PdksDataContext/PERARSIV1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="81ded732-dcae-4456-9be6-6ce8331c97ad" absoluteBounds="3.015, 0.96, 2.0949999999999998, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="55d4c606-ae1f-4d39-8bf0-53f9997216bc" absoluteBounds="7.625, 0.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/PdksDataContext/ENT_SAATIZIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d932640-6529-4f4e-baf1-af8961d4bcef" absoluteBounds="7.64, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
