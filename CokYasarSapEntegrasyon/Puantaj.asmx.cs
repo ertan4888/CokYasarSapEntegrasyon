@@ -63,7 +63,7 @@ namespace CokYasarSapEntegrasyon
                             join personel in ctx.PERSONEL1s on puantaj.PRSICIL equals personel.SICILNO
                             join cros in ctx.NARSOFT_SAP_CALKODUs on puantaj.CLKODU.ToString() equals cros.NARSOFT_KODU
                             where
-                            (puantaj.AY == ay && puantaj.YIL == yil) || personel.PERTIP==sirketKodu || personel.DEPART== personelAlani || personel.ALTDEPART==personelAltAlani
+                            (puantaj.AY == ay && puantaj.YIL == yil) || personel.PERTIP == sirketKodu || personel.DEPART == personelAlani || personel.ALTDEPART == personelAltAlani
                             select new PuantajModel
                             {
                                 AdSoyad = string.Format("{0} {1}", personel.ADI, personel.SOYADI),
@@ -134,15 +134,10 @@ namespace CokYasarSapEntegrasyon
 
                 return null;
             }
-
-
-
-
         }
 
-
         [WebMethod]
-        public string PostPersonelVardiyaInfo(string tarih)
+        public string PostPersonelVardiyaInfo()
         {
             try
             {
@@ -152,48 +147,45 @@ namespace CokYasarSapEntegrasyon
                     Message = "PostPersonelVardiyaInfo methodu başladı",
                     MessageTemplate = "PostPersonelVardiyaInfo",
                     Level = "Information",
-                    RequestBody = Newtonsoft.Json.JsonConvert.SerializeObject(
-                       new
-                       {
-                           Tarih = tarih,
-                       }),
                     RowId = Guid.NewGuid(),
                     TimeStamp = DateTime.Now
                 });
 
 
 
-                if (tarih == null)
-                {
-                    _log.Log(new Nar_Log
-                    {
-                        Message = "Tarih paramatresi boş geldiği için 'Paramatre boş geçilemez uyarısı verildi'",
-                        MessageTemplate = "PostPersonelVardiyaInfo",
-                        Level = "Information",
-                        RequestBody = Newtonsoft.Json.JsonConvert.SerializeObject(
-                     new
-                     {
-                         Tarih = tarih,
-                     }),
-                        RowId = Guid.NewGuid(),
-                        TimeStamp = DateTime.Now
-                    });
-                    return "Paramatre boş geçilemez";
-                }
-
-
                 var _listData = new List<sapPuantajService.ZCYHR_S023>();
 
 
-                var query = from puantaj in ctx.PUANTAJ1s.Where(x => x.TARIH == DateTime.Parse(tarih))
-                            join vardiya in ctx.NARSOFT_SAP_VRKODUs on puantaj.PSKODU equals vardiya.VR_NARSOFT
-                            select new sapPuantajService.ZCYHR_S023
-                            {
-                                PERNR = puantaj.PRSICIL,
-                                DATUM = DateTime.Parse(tarih).ToString("yyyyMMdd"),
-                                TPROG = vardiya.VR_SAP
-                            };
+                var a = ctx.NARSOFT_SAP_POSTAs.Where(x => x.TARIHSAAT.Value.Date == DateTime.Now.Date).ToList();
+                             
 
+                var query = (from posta in ctx.NARSOFT_SAP_POSTAs.Where(x => x.ISLEMTARIHI.Value.Date == DateTime.Now.Date).ToList()
+                             join vardiya in ctx.NARSOFT_SAP_VRKODUs on posta.POSTA equals vardiya.VR_NARSOFT
+
+                             select new sapPuantajService.ZCYHR_S023
+                             {
+                                 PERNR = posta.SICILNO.TrimEnd(),
+                                 DATUM = posta.TARIHSAAT.Value.ToString("yyyyMMdd"),
+                                 TPROG = vardiya.VR_SAP
+                             }).ToList();
+
+
+
+
+                if (!query.Any())
+                {
+                    _log.Log(new Nar_Log
+                    {
+                        Message = "Sap ZCYHR_FG003_003 servisi çağrıldı",
+                        MessageTemplate = "PostPersonelVardiyaInfo",
+                        Level = "Information",
+                        RequestBody = JsonConvert.SerializeObject(query.ToList()),
+                        TimeStamp = DateTime.Now,
+                        RowId = Guid.NewGuid(),
+                        ResponseBody = "Posta Verisi bulunamadı"
+                    });
+                    return "Posta Verisi bulunamadı";
+                }
 
                 _log.Log(new Nar_Log
                 {
@@ -204,7 +196,6 @@ namespace CokYasarSapEntegrasyon
                     TimeStamp = DateTime.Now,
                     RowId = Guid.NewGuid(),
                 });
-
 
                 System.Net.NetworkCredential cred = new System.Net.NetworkCredential();
                 cred.UserName = userName;
@@ -221,16 +212,21 @@ namespace CokYasarSapEntegrasyon
 
                 get_SapVendor_response = get_SapVendor.ZCYHR_FG003_003(get_SapVendor_Input);
 
-                 _log.Log(new Nar_Log
+                _log.Log(new Nar_Log
                 {
-                    Message = string.Format("{0}-{1}-{2}","Sap ZCYHR_FG003_003 servisinden geri dönüş alınarak işlem başarı ile tamamlandı.","Servisten alınan data sayısı", get_SapVendor_response.ET_MESSAGE.Count()),
+                    Message = string.Format("{0}-{1}-{2}", "Sap ZCYHR_FG003_003 servisinden geri dönüş alınarak işlem başarı ile tamamlandı.", "Servisten alınan data sayısı", get_SapVendor_response.ET_MESSAGE.Count()),
                     MessageTemplate = "PostPersonelVardiyaInfo",
                     Level = "Information",
                     RequestBody = JsonConvert.SerializeObject(query.ToList()),
                     TimeStamp = DateTime.Now,
-                    ResponseBody= JsonConvert.SerializeObject(get_SapVendor_response.ET_MESSAGE.ToList()),
-                     RowId = Guid.NewGuid(),
-                 });
+                    ResponseBody = JsonConvert.SerializeObject(get_SapVendor_response.ET_MESSAGE.ToList()),
+                    RowId = Guid.NewGuid(),
+                });
+
+
+                if (get_SapVendor_response.ET_MESSAGE.Any())
+                    UpdatePostaFlag(get_SapVendor_response.ET_MESSAGE.ToList());
+
 
                 return "İşlem Başarılı";
             }
@@ -259,6 +255,23 @@ namespace CokYasarSapEntegrasyon
             return DateTime.Parse(sonTarih);
         }
 
+
+        private void UpdatePostaFlag(List<sapPuantajService.ZCYHR_S024> messages)
+        {
+            foreach (var result in messages)
+            {
+                if (result.MESSAGE == "Başarılı!")
+                {
+                    var posta = ctx.NARSOFT_SAP_POSTAs.FirstOrDefault(x => x.FLAG == true && x.SICILNO == result.PERNR.TrimStart('0'));
+                    if (posta != null)
+                        posta.FLAG = false;
+
+
+                }
+            }
+            ctx.SubmitChanges();
+
+        }
 
 
     }

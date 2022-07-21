@@ -59,8 +59,8 @@ namespace CokYasarSapEntegrasyon
 
                 get_SapVendor.PreAuthenticate = true;
                 get_SapVendor.Credentials = cred;
-                get_SapVendor_Input.IV_BEGDA = "20220101";//2 ay öncesi
-                get_SapVendor_Input.IV_ENDDA = "20220916";//2 ay sonrası
+                get_SapVendor_Input.IV_BEGDA = DateTime.Now.Date.AddMonths(-2).ToString("yyyyMMdd");//2 ay öncesi
+                get_SapVendor_Input.IV_ENDDA = DateTime.Now.Date.ToString("yyyyMMdd");
 
                 get_SapVendor_Input.IV_BTRTL = string.Empty;
                 get_SapVendor_Input.IV_WERKS = string.Empty;
@@ -162,7 +162,7 @@ namespace CokYasarSapEntegrasyon
                         {
                             IV_BTRTL = string.Empty,
                             IV_BUKRS = string.Empty,
-                            IV_DATUM = "20220513",//Günün tarihi
+                            IV_DATUM = DateTime.Now.Date.ToString("yyyyMMdd"),
                             IV_WERKS = string.Empty,
                             IV_PERNR = string.Empty
 
@@ -186,7 +186,7 @@ namespace CokYasarSapEntegrasyon
                 get_SapVendor.Credentials = cred;
                 get_SapVendor_Input.IV_BTRTL = string.Empty;
                 get_SapVendor_Input.IV_BUKRS = string.Empty;
-                get_SapVendor_Input.IV_DATUM = "20220513";
+                get_SapVendor_Input.IV_DATUM = DateTime.Now.Date.ToString("yyyyMMdd");
                 get_SapVendor_Input.IV_WERKS = string.Empty;
                 get_SapVendor_Input.IV_PERNR = string.Empty;
                 get_SapVendor_response = get_SapVendor.ZCYHR_FG003_002(get_SapVendor_Input);
@@ -248,7 +248,7 @@ namespace CokYasarSapEntegrasyon
                         {
                             IV_BTRTL = string.Empty,
                             IV_BUKRS = string.Empty,
-                            IV_DATUM = "20220513",
+                            IV_DATUM = DateTime.Now.Date.ToString("yyyyMMdd"),
                             IV_WERKS = string.Empty,
                             IV_PERNR = string.Empty
 

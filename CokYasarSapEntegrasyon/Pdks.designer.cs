@@ -48,9 +48,6 @@ namespace CokYasarSapEntegrasyon
     partial void InsertPUANTAJ1(PUANTAJ1 instance);
     partial void UpdatePUANTAJ1(PUANTAJ1 instance);
     partial void DeletePUANTAJ1(PUANTAJ1 instance);
-    partial void InsertNARSOFT_SAP_VRKODU(NARSOFT_SAP_VRKODU instance);
-    partial void UpdateNARSOFT_SAP_VRKODU(NARSOFT_SAP_VRKODU instance);
-    partial void DeleteNARSOFT_SAP_VRKODU(NARSOFT_SAP_VRKODU instance);
     partial void InsertENT_GUNIZIN_TEST(ENT_GUNIZIN_TEST instance);
     partial void UpdateENT_GUNIZIN_TEST(ENT_GUNIZIN_TEST instance);
     partial void DeleteENT_GUNIZIN_TEST(ENT_GUNIZIN_TEST instance);
@@ -60,6 +57,12 @@ namespace CokYasarSapEntegrasyon
     partial void InsertENT_SAATIZIN(ENT_SAATIZIN instance);
     partial void UpdateENT_SAATIZIN(ENT_SAATIZIN instance);
     partial void DeleteENT_SAATIZIN(ENT_SAATIZIN instance);
+    partial void InsertNARSOFT_SAP_VRKODU(NARSOFT_SAP_VRKODU instance);
+    partial void UpdateNARSOFT_SAP_VRKODU(NARSOFT_SAP_VRKODU instance);
+    partial void DeleteNARSOFT_SAP_VRKODU(NARSOFT_SAP_VRKODU instance);
+    partial void InsertNARSOFT_SAP_POSTA(NARSOFT_SAP_POSTA instance);
+    partial void UpdateNARSOFT_SAP_POSTA(NARSOFT_SAP_POSTA instance);
+    partial void DeleteNARSOFT_SAP_POSTA(NARSOFT_SAP_POSTA instance);
     #endregion
 		
 		public PdksDataContext() : 
@@ -140,14 +143,6 @@ namespace CokYasarSapEntegrasyon
 			}
 		}
 		
-		public System.Data.Linq.Table<NARSOFT_SAP_VRKODU> NARSOFT_SAP_VRKODUs
-		{
-			get
-			{
-				return this.GetTable<NARSOFT_SAP_VRKODU>();
-			}
-		}
-		
 		public System.Data.Linq.Table<ENT_GUNIZIN_TEST> ENT_GUNIZIN_TESTs
 		{
 			get
@@ -169,6 +164,22 @@ namespace CokYasarSapEntegrasyon
 			get
 			{
 				return this.GetTable<ENT_SAATIZIN>();
+			}
+		}
+		
+		public System.Data.Linq.Table<NARSOFT_SAP_VRKODU> NARSOFT_SAP_VRKODUs
+		{
+			get
+			{
+				return this.GetTable<NARSOFT_SAP_VRKODU>();
+			}
+		}
+		
+		public System.Data.Linq.Table<NARSOFT_SAP_POSTA> NARSOFT_SAP_POSTAs
+		{
+			get
+			{
+				return this.GetTable<NARSOFT_SAP_POSTA>();
 			}
 		}
 	}
@@ -4745,476 +4756,6 @@ namespace CokYasarSapEntegrasyon
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NARSOFT_SAP_VRKODU")]
-	public partial class NARSOFT_SAP_VRKODU : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IDNO;
-		
-		private System.Nullable<int> _VR_NARSOFT;
-		
-		private string _VR_NARSOFT_ACIKLAMA;
-		
-		private string _VR_SAP;
-		
-		private string _VR_SAP_ACIKLAMA;
-		
-		private string _BOLGE;
-		
-		private System.Nullable<System.DateTime> _VR_BASSAAT;
-		
-		private System.Nullable<System.DateTime> _VR_BITSAAT;
-		
-		private System.Nullable<System.TimeSpan> _VR_SURE;
-		
-		private System.Nullable<System.TimeSpan> _GIRIS_TOLERANS_BASLANGIC;
-		
-		private System.Nullable<System.TimeSpan> _GIRIS_TOLERANS_BITIS;
-		
-		private System.Nullable<System.TimeSpan> _CIKIS_TOLRESAN_BASLANGIC;
-		
-		private System.Nullable<System.TimeSpan> _CIKIS_TOLERANS_BITIS;
-		
-		private System.Nullable<double> _HAFTALIK_CALISMA_SURESI;
-		
-		private System.Nullable<int> _HAFTALIK_CALISMA_GUN_SAYISI;
-		
-		private System.Nullable<System.TimeSpan> _MOLA_BASLANGIC;
-		
-		private System.Nullable<System.TimeSpan> _MOLA_BITIS;
-		
-		private System.Nullable<double> _MOLA_SURESI;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDNOChanging(int value);
-    partial void OnIDNOChanged();
-    partial void OnVR_NARSOFTChanging(System.Nullable<int> value);
-    partial void OnVR_NARSOFTChanged();
-    partial void OnVR_NARSOFT_ACIKLAMAChanging(string value);
-    partial void OnVR_NARSOFT_ACIKLAMAChanged();
-    partial void OnVR_SAPChanging(string value);
-    partial void OnVR_SAPChanged();
-    partial void OnVR_SAP_ACIKLAMAChanging(string value);
-    partial void OnVR_SAP_ACIKLAMAChanged();
-    partial void OnBOLGEChanging(string value);
-    partial void OnBOLGEChanged();
-    partial void OnVR_BASSAATChanging(System.Nullable<System.DateTime> value);
-    partial void OnVR_BASSAATChanged();
-    partial void OnVR_BITSAATChanging(System.Nullable<System.DateTime> value);
-    partial void OnVR_BITSAATChanged();
-    partial void OnVR_SUREChanging(System.Nullable<System.TimeSpan> value);
-    partial void OnVR_SUREChanged();
-    partial void OnGIRIS_TOLERANS_BASLANGICChanging(System.Nullable<System.TimeSpan> value);
-    partial void OnGIRIS_TOLERANS_BASLANGICChanged();
-    partial void OnGIRIS_TOLERANS_BITISChanging(System.Nullable<System.TimeSpan> value);
-    partial void OnGIRIS_TOLERANS_BITISChanged();
-    partial void OnCIKIS_TOLRESAN_BASLANGICChanging(System.Nullable<System.TimeSpan> value);
-    partial void OnCIKIS_TOLRESAN_BASLANGICChanged();
-    partial void OnCIKIS_TOLERANS_BITISChanging(System.Nullable<System.TimeSpan> value);
-    partial void OnCIKIS_TOLERANS_BITISChanged();
-    partial void OnHAFTALIK_CALISMA_SURESIChanging(System.Nullable<double> value);
-    partial void OnHAFTALIK_CALISMA_SURESIChanged();
-    partial void OnHAFTALIK_CALISMA_GUN_SAYISIChanging(System.Nullable<int> value);
-    partial void OnHAFTALIK_CALISMA_GUN_SAYISIChanged();
-    partial void OnMOLA_BASLANGICChanging(System.Nullable<System.TimeSpan> value);
-    partial void OnMOLA_BASLANGICChanged();
-    partial void OnMOLA_BITISChanging(System.Nullable<System.TimeSpan> value);
-    partial void OnMOLA_BITISChanged();
-    partial void OnMOLA_SURESIChanging(System.Nullable<double> value);
-    partial void OnMOLA_SURESIChanged();
-    #endregion
-		
-		public NARSOFT_SAP_VRKODU()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDNO", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IDNO
-		{
-			get
-			{
-				return this._IDNO;
-			}
-			set
-			{
-				if ((this._IDNO != value))
-				{
-					this.OnIDNOChanging(value);
-					this.SendPropertyChanging();
-					this._IDNO = value;
-					this.SendPropertyChanged("IDNO");
-					this.OnIDNOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VR_NARSOFT", DbType="Int")]
-		public System.Nullable<int> VR_NARSOFT
-		{
-			get
-			{
-				return this._VR_NARSOFT;
-			}
-			set
-			{
-				if ((this._VR_NARSOFT != value))
-				{
-					this.OnVR_NARSOFTChanging(value);
-					this.SendPropertyChanging();
-					this._VR_NARSOFT = value;
-					this.SendPropertyChanged("VR_NARSOFT");
-					this.OnVR_NARSOFTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VR_NARSOFT_ACIKLAMA", DbType="NVarChar(50)")]
-		public string VR_NARSOFT_ACIKLAMA
-		{
-			get
-			{
-				return this._VR_NARSOFT_ACIKLAMA;
-			}
-			set
-			{
-				if ((this._VR_NARSOFT_ACIKLAMA != value))
-				{
-					this.OnVR_NARSOFT_ACIKLAMAChanging(value);
-					this.SendPropertyChanging();
-					this._VR_NARSOFT_ACIKLAMA = value;
-					this.SendPropertyChanged("VR_NARSOFT_ACIKLAMA");
-					this.OnVR_NARSOFT_ACIKLAMAChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VR_SAP", DbType="NVarChar(50)")]
-		public string VR_SAP
-		{
-			get
-			{
-				return this._VR_SAP;
-			}
-			set
-			{
-				if ((this._VR_SAP != value))
-				{
-					this.OnVR_SAPChanging(value);
-					this.SendPropertyChanging();
-					this._VR_SAP = value;
-					this.SendPropertyChanged("VR_SAP");
-					this.OnVR_SAPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VR_SAP_ACIKLAMA", DbType="NVarChar(50)")]
-		public string VR_SAP_ACIKLAMA
-		{
-			get
-			{
-				return this._VR_SAP_ACIKLAMA;
-			}
-			set
-			{
-				if ((this._VR_SAP_ACIKLAMA != value))
-				{
-					this.OnVR_SAP_ACIKLAMAChanging(value);
-					this.SendPropertyChanging();
-					this._VR_SAP_ACIKLAMA = value;
-					this.SendPropertyChanged("VR_SAP_ACIKLAMA");
-					this.OnVR_SAP_ACIKLAMAChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BOLGE", DbType="NVarChar(50)")]
-		public string BOLGE
-		{
-			get
-			{
-				return this._BOLGE;
-			}
-			set
-			{
-				if ((this._BOLGE != value))
-				{
-					this.OnBOLGEChanging(value);
-					this.SendPropertyChanging();
-					this._BOLGE = value;
-					this.SendPropertyChanged("BOLGE");
-					this.OnBOLGEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VR_BASSAAT", DbType="DateTime")]
-		public System.Nullable<System.DateTime> VR_BASSAAT
-		{
-			get
-			{
-				return this._VR_BASSAAT;
-			}
-			set
-			{
-				if ((this._VR_BASSAAT != value))
-				{
-					this.OnVR_BASSAATChanging(value);
-					this.SendPropertyChanging();
-					this._VR_BASSAAT = value;
-					this.SendPropertyChanged("VR_BASSAAT");
-					this.OnVR_BASSAATChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VR_BITSAAT", DbType="DateTime")]
-		public System.Nullable<System.DateTime> VR_BITSAAT
-		{
-			get
-			{
-				return this._VR_BITSAAT;
-			}
-			set
-			{
-				if ((this._VR_BITSAAT != value))
-				{
-					this.OnVR_BITSAATChanging(value);
-					this.SendPropertyChanging();
-					this._VR_BITSAAT = value;
-					this.SendPropertyChanged("VR_BITSAAT");
-					this.OnVR_BITSAATChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VR_SURE", DbType="Time")]
-		public System.Nullable<System.TimeSpan> VR_SURE
-		{
-			get
-			{
-				return this._VR_SURE;
-			}
-			set
-			{
-				if ((this._VR_SURE != value))
-				{
-					this.OnVR_SUREChanging(value);
-					this.SendPropertyChanging();
-					this._VR_SURE = value;
-					this.SendPropertyChanged("VR_SURE");
-					this.OnVR_SUREChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIRIS_TOLERANS_BASLANGIC", DbType="Time")]
-		public System.Nullable<System.TimeSpan> GIRIS_TOLERANS_BASLANGIC
-		{
-			get
-			{
-				return this._GIRIS_TOLERANS_BASLANGIC;
-			}
-			set
-			{
-				if ((this._GIRIS_TOLERANS_BASLANGIC != value))
-				{
-					this.OnGIRIS_TOLERANS_BASLANGICChanging(value);
-					this.SendPropertyChanging();
-					this._GIRIS_TOLERANS_BASLANGIC = value;
-					this.SendPropertyChanged("GIRIS_TOLERANS_BASLANGIC");
-					this.OnGIRIS_TOLERANS_BASLANGICChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIRIS_TOLERANS_BITIS", DbType="Time")]
-		public System.Nullable<System.TimeSpan> GIRIS_TOLERANS_BITIS
-		{
-			get
-			{
-				return this._GIRIS_TOLERANS_BITIS;
-			}
-			set
-			{
-				if ((this._GIRIS_TOLERANS_BITIS != value))
-				{
-					this.OnGIRIS_TOLERANS_BITISChanging(value);
-					this.SendPropertyChanging();
-					this._GIRIS_TOLERANS_BITIS = value;
-					this.SendPropertyChanged("GIRIS_TOLERANS_BITIS");
-					this.OnGIRIS_TOLERANS_BITISChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIKIS_TOLRESAN_BASLANGIC", DbType="Time")]
-		public System.Nullable<System.TimeSpan> CIKIS_TOLRESAN_BASLANGIC
-		{
-			get
-			{
-				return this._CIKIS_TOLRESAN_BASLANGIC;
-			}
-			set
-			{
-				if ((this._CIKIS_TOLRESAN_BASLANGIC != value))
-				{
-					this.OnCIKIS_TOLRESAN_BASLANGICChanging(value);
-					this.SendPropertyChanging();
-					this._CIKIS_TOLRESAN_BASLANGIC = value;
-					this.SendPropertyChanged("CIKIS_TOLRESAN_BASLANGIC");
-					this.OnCIKIS_TOLRESAN_BASLANGICChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIKIS_TOLERANS_BITIS", DbType="Time")]
-		public System.Nullable<System.TimeSpan> CIKIS_TOLERANS_BITIS
-		{
-			get
-			{
-				return this._CIKIS_TOLERANS_BITIS;
-			}
-			set
-			{
-				if ((this._CIKIS_TOLERANS_BITIS != value))
-				{
-					this.OnCIKIS_TOLERANS_BITISChanging(value);
-					this.SendPropertyChanging();
-					this._CIKIS_TOLERANS_BITIS = value;
-					this.SendPropertyChanged("CIKIS_TOLERANS_BITIS");
-					this.OnCIKIS_TOLERANS_BITISChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HAFTALIK_CALISMA_SURESI", DbType="Float")]
-		public System.Nullable<double> HAFTALIK_CALISMA_SURESI
-		{
-			get
-			{
-				return this._HAFTALIK_CALISMA_SURESI;
-			}
-			set
-			{
-				if ((this._HAFTALIK_CALISMA_SURESI != value))
-				{
-					this.OnHAFTALIK_CALISMA_SURESIChanging(value);
-					this.SendPropertyChanging();
-					this._HAFTALIK_CALISMA_SURESI = value;
-					this.SendPropertyChanged("HAFTALIK_CALISMA_SURESI");
-					this.OnHAFTALIK_CALISMA_SURESIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HAFTALIK_CALISMA_GUN_SAYISI", DbType="Int")]
-		public System.Nullable<int> HAFTALIK_CALISMA_GUN_SAYISI
-		{
-			get
-			{
-				return this._HAFTALIK_CALISMA_GUN_SAYISI;
-			}
-			set
-			{
-				if ((this._HAFTALIK_CALISMA_GUN_SAYISI != value))
-				{
-					this.OnHAFTALIK_CALISMA_GUN_SAYISIChanging(value);
-					this.SendPropertyChanging();
-					this._HAFTALIK_CALISMA_GUN_SAYISI = value;
-					this.SendPropertyChanged("HAFTALIK_CALISMA_GUN_SAYISI");
-					this.OnHAFTALIK_CALISMA_GUN_SAYISIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MOLA_BASLANGIC", DbType="Time")]
-		public System.Nullable<System.TimeSpan> MOLA_BASLANGIC
-		{
-			get
-			{
-				return this._MOLA_BASLANGIC;
-			}
-			set
-			{
-				if ((this._MOLA_BASLANGIC != value))
-				{
-					this.OnMOLA_BASLANGICChanging(value);
-					this.SendPropertyChanging();
-					this._MOLA_BASLANGIC = value;
-					this.SendPropertyChanged("MOLA_BASLANGIC");
-					this.OnMOLA_BASLANGICChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MOLA_BITIS", DbType="Time")]
-		public System.Nullable<System.TimeSpan> MOLA_BITIS
-		{
-			get
-			{
-				return this._MOLA_BITIS;
-			}
-			set
-			{
-				if ((this._MOLA_BITIS != value))
-				{
-					this.OnMOLA_BITISChanging(value);
-					this.SendPropertyChanging();
-					this._MOLA_BITIS = value;
-					this.SendPropertyChanged("MOLA_BITIS");
-					this.OnMOLA_BITISChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MOLA_SURESI", DbType="Float")]
-		public System.Nullable<double> MOLA_SURESI
-		{
-			get
-			{
-				return this._MOLA_SURESI;
-			}
-			set
-			{
-				if ((this._MOLA_SURESI != value))
-				{
-					this.OnMOLA_SURESIChanging(value);
-					this.SendPropertyChanging();
-					this._MOLA_SURESI = value;
-					this.SendPropertyChanged("MOLA_SURESI");
-					this.OnMOLA_SURESIChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ENT_GUNIZIN_TEST")]
 	public partial class ENT_GUNIZIN_TEST : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -5976,6 +5517,394 @@ namespace CokYasarSapEntegrasyon
 					this._SRKODU = value;
 					this.SendPropertyChanged("SRKODU");
 					this.OnSRKODUChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NARSOFT_SAP_VRKODU")]
+	public partial class NARSOFT_SAP_VRKODU : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IDNO;
+		
+		private System.Nullable<int> _VR_NARSOFT;
+		
+		private string _VR_NARSOFT_ACIKLAMA;
+		
+		private string _VR_SAP;
+		
+		private string _VR_SAP_ACIKLAMA;
+		
+		private string _BOLGE;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDNOChanging(int value);
+    partial void OnIDNOChanged();
+    partial void OnVR_NARSOFTChanging(System.Nullable<int> value);
+    partial void OnVR_NARSOFTChanged();
+    partial void OnVR_NARSOFT_ACIKLAMAChanging(string value);
+    partial void OnVR_NARSOFT_ACIKLAMAChanged();
+    partial void OnVR_SAPChanging(string value);
+    partial void OnVR_SAPChanged();
+    partial void OnVR_SAP_ACIKLAMAChanging(string value);
+    partial void OnVR_SAP_ACIKLAMAChanged();
+    partial void OnBOLGEChanging(string value);
+    partial void OnBOLGEChanged();
+    #endregion
+		
+		public NARSOFT_SAP_VRKODU()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDNO", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IDNO
+		{
+			get
+			{
+				return this._IDNO;
+			}
+			set
+			{
+				if ((this._IDNO != value))
+				{
+					this.OnIDNOChanging(value);
+					this.SendPropertyChanging();
+					this._IDNO = value;
+					this.SendPropertyChanged("IDNO");
+					this.OnIDNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VR_NARSOFT", DbType="Int")]
+		public System.Nullable<int> VR_NARSOFT
+		{
+			get
+			{
+				return this._VR_NARSOFT;
+			}
+			set
+			{
+				if ((this._VR_NARSOFT != value))
+				{
+					this.OnVR_NARSOFTChanging(value);
+					this.SendPropertyChanging();
+					this._VR_NARSOFT = value;
+					this.SendPropertyChanged("VR_NARSOFT");
+					this.OnVR_NARSOFTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VR_NARSOFT_ACIKLAMA", DbType="NVarChar(50)")]
+		public string VR_NARSOFT_ACIKLAMA
+		{
+			get
+			{
+				return this._VR_NARSOFT_ACIKLAMA;
+			}
+			set
+			{
+				if ((this._VR_NARSOFT_ACIKLAMA != value))
+				{
+					this.OnVR_NARSOFT_ACIKLAMAChanging(value);
+					this.SendPropertyChanging();
+					this._VR_NARSOFT_ACIKLAMA = value;
+					this.SendPropertyChanged("VR_NARSOFT_ACIKLAMA");
+					this.OnVR_NARSOFT_ACIKLAMAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VR_SAP", DbType="NVarChar(50)")]
+		public string VR_SAP
+		{
+			get
+			{
+				return this._VR_SAP;
+			}
+			set
+			{
+				if ((this._VR_SAP != value))
+				{
+					this.OnVR_SAPChanging(value);
+					this.SendPropertyChanging();
+					this._VR_SAP = value;
+					this.SendPropertyChanged("VR_SAP");
+					this.OnVR_SAPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VR_SAP_ACIKLAMA", DbType="NVarChar(50)")]
+		public string VR_SAP_ACIKLAMA
+		{
+			get
+			{
+				return this._VR_SAP_ACIKLAMA;
+			}
+			set
+			{
+				if ((this._VR_SAP_ACIKLAMA != value))
+				{
+					this.OnVR_SAP_ACIKLAMAChanging(value);
+					this.SendPropertyChanging();
+					this._VR_SAP_ACIKLAMA = value;
+					this.SendPropertyChanged("VR_SAP_ACIKLAMA");
+					this.OnVR_SAP_ACIKLAMAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BOLGE", DbType="NVarChar(50)")]
+		public string BOLGE
+		{
+			get
+			{
+				return this._BOLGE;
+			}
+			set
+			{
+				if ((this._BOLGE != value))
+				{
+					this.OnBOLGEChanging(value);
+					this.SendPropertyChanging();
+					this._BOLGE = value;
+					this.SendPropertyChanged("BOLGE");
+					this.OnBOLGEChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NARSOFT_SAP_POSTA")]
+	public partial class NARSOFT_SAP_POSTA : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _ID;
+		
+		private string _SICILNO;
+		
+		private System.Nullable<System.DateTime> _TARIHSAAT;
+		
+		private System.Nullable<System.DateTime> _ISLEMTARIHI;
+		
+		private System.Nullable<int> _POSTA;
+		
+		private System.Nullable<int> _VARDIYA;
+		
+		private System.Nullable<bool> _FLAG;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(long value);
+    partial void OnIDChanged();
+    partial void OnSICILNOChanging(string value);
+    partial void OnSICILNOChanged();
+    partial void OnTARIHSAATChanging(System.Nullable<System.DateTime> value);
+    partial void OnTARIHSAATChanged();
+    partial void OnISLEMTARIHIChanging(System.Nullable<System.DateTime> value);
+    partial void OnISLEMTARIHIChanged();
+    partial void OnPOSTAChanging(System.Nullable<int> value);
+    partial void OnPOSTAChanged();
+    partial void OnVARDIYAChanging(System.Nullable<int> value);
+    partial void OnVARDIYAChanged();
+    partial void OnFLAGChanging(System.Nullable<bool> value);
+    partial void OnFLAGChanged();
+    #endregion
+		
+		public NARSOFT_SAP_POSTA()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SICILNO", DbType="NChar(10)")]
+		public string SICILNO
+		{
+			get
+			{
+				return this._SICILNO;
+			}
+			set
+			{
+				if ((this._SICILNO != value))
+				{
+					this.OnSICILNOChanging(value);
+					this.SendPropertyChanging();
+					this._SICILNO = value;
+					this.SendPropertyChanged("SICILNO");
+					this.OnSICILNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TARIHSAAT", DbType="DateTime")]
+		public System.Nullable<System.DateTime> TARIHSAAT
+		{
+			get
+			{
+				return this._TARIHSAAT;
+			}
+			set
+			{
+				if ((this._TARIHSAAT != value))
+				{
+					this.OnTARIHSAATChanging(value);
+					this.SendPropertyChanging();
+					this._TARIHSAAT = value;
+					this.SendPropertyChanged("TARIHSAAT");
+					this.OnTARIHSAATChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISLEMTARIHI", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ISLEMTARIHI
+		{
+			get
+			{
+				return this._ISLEMTARIHI;
+			}
+			set
+			{
+				if ((this._ISLEMTARIHI != value))
+				{
+					this.OnISLEMTARIHIChanging(value);
+					this.SendPropertyChanging();
+					this._ISLEMTARIHI = value;
+					this.SendPropertyChanged("ISLEMTARIHI");
+					this.OnISLEMTARIHIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_POSTA", DbType="Int")]
+		public System.Nullable<int> POSTA
+		{
+			get
+			{
+				return this._POSTA;
+			}
+			set
+			{
+				if ((this._POSTA != value))
+				{
+					this.OnPOSTAChanging(value);
+					this.SendPropertyChanging();
+					this._POSTA = value;
+					this.SendPropertyChanged("POSTA");
+					this.OnPOSTAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VARDIYA", DbType="Int")]
+		public System.Nullable<int> VARDIYA
+		{
+			get
+			{
+				return this._VARDIYA;
+			}
+			set
+			{
+				if ((this._VARDIYA != value))
+				{
+					this.OnVARDIYAChanging(value);
+					this.SendPropertyChanging();
+					this._VARDIYA = value;
+					this.SendPropertyChanged("VARDIYA");
+					this.OnVARDIYAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FLAG", DbType="Bit")]
+		public System.Nullable<bool> FLAG
+		{
+			get
+			{
+				return this._FLAG;
+			}
+			set
+			{
+				if ((this._FLAG != value))
+				{
+					this.OnFLAGChanging(value);
+					this.SendPropertyChanging();
+					this._FLAG = value;
+					this.SendPropertyChanged("FLAG");
+					this.OnFLAGChanged();
 				}
 			}
 		}

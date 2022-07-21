@@ -205,28 +205,6 @@
       <Column Name="DNK_DONEM" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.NARSOFT_SAP_VRKODU" Member="NARSOFT_SAP_VRKODUs">
-    <Type Name="NARSOFT_SAP_VRKODU">
-      <Column Name="IDNO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="VR_NARSOFT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="VR_NARSOFT_ACIKLAMA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="VR_SAP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="VR_SAP_ACIKLAMA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BOLGE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="VR_BASSAAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="VR_BITSAAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="VR_SURE" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="GIRIS_TOLERANS_BASLANGIC" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="GIRIS_TOLERANS_BITIS" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="CIKIS_TOLRESAN_BASLANGIC" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="CIKIS_TOLERANS_BITIS" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="HAFTALIK_CALISMA_SURESI" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="HAFTALIK_CALISMA_GUN_SAYISI" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MOLA_BASLANGIC" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="MOLA_BITIS" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="MOLA_SURESI" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.ENT_GUNIZIN_TEST" Member="ENT_GUNIZIN_TESTs">
     <Type Name="ENT_GUNIZIN_TEST">
       <Column Name="IDNO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -265,6 +243,27 @@
       <Column Name="SEBEP" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="TRNID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SRKODU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NARSOFT_SAP_VRKODU" Member="NARSOFT_SAP_VRKODUs">
+    <Type Name="NARSOFT_SAP_VRKODU">
+      <Column Name="IDNO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VR_NARSOFT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VR_NARSOFT_ACIKLAMA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VR_SAP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VR_SAP_ACIKLAMA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BOLGE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NARSOFT_SAP_POSTA" Member="NARSOFT_SAP_POSTAs">
+    <Type Name="NARSOFT_SAP_POSTA">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SICILNO" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="TARIHSAAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ISLEMTARIHI" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="POSTA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VARDIYA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FLAG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
