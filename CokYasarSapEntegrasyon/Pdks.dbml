@@ -266,4 +266,37 @@
       <Column Name="FLAG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.KULLANICI" Member="KULLANICIs">
+    <Type Name="KULLANICI">
+      <Column Name="IDNO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ADI" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SIFRE" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NTADI" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IZAHAT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DERECE" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TOOLBAR" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="OUTLOOK" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="EXPLORER" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="THEME" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="STYLESHEET" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ADMIN" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ADISOYADI" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HAREKET_TABLO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PUANTAJ_TABLO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FM_ONAY" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GUNLUK_IZIN_ONAY" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SAATLIK_IZIN_ONAY" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DIL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FONT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KOD_BAZLI_YETKI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LOGICALREF" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AYLIK_ONAY_DERECE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXCEL_TRANSFER" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DOMAIN_USERNAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HAFTA_TATILI_ONAY" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OFFLINE_CALISMA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HAREKET_GECMISISLEM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

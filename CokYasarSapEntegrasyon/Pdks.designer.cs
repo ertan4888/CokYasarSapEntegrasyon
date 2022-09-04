@@ -63,6 +63,9 @@ namespace CokYasarSapEntegrasyon
     partial void InsertNARSOFT_SAP_POSTA(NARSOFT_SAP_POSTA instance);
     partial void UpdateNARSOFT_SAP_POSTA(NARSOFT_SAP_POSTA instance);
     partial void DeleteNARSOFT_SAP_POSTA(NARSOFT_SAP_POSTA instance);
+    partial void InsertKULLANICI(KULLANICI instance);
+    partial void UpdateKULLANICI(KULLANICI instance);
+    partial void DeleteKULLANICI(KULLANICI instance);
     #endregion
 		
 		public PdksDataContext() : 
@@ -180,6 +183,14 @@ namespace CokYasarSapEntegrasyon
 			get
 			{
 				return this.GetTable<NARSOFT_SAP_POSTA>();
+			}
+		}
+		
+		public System.Data.Linq.Table<KULLANICI> KULLANICIs
+		{
+			get
+			{
+				return this.GetTable<KULLANICI>();
 			}
 		}
 	}
@@ -5905,6 +5916,740 @@ namespace CokYasarSapEntegrasyon
 					this._FLAG = value;
 					this.SendPropertyChanged("FLAG");
 					this.OnFLAGChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KULLANICI")]
+	public partial class KULLANICI : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Nullable<int> _IDNO;
+		
+		private string _ADI;
+		
+		private string _SIFRE;
+		
+		private string _NTADI;
+		
+		private string _IZAHAT;
+		
+		private string _DERECE;
+		
+		private string _TOOLBAR;
+		
+		private string _OUTLOOK;
+		
+		private string _EXPLORER;
+		
+		private string _THEME;
+		
+		private string _STYLESHEET;
+		
+		private System.Nullable<char> _ADMIN;
+		
+		private string _EMAIL;
+		
+		private string _ADISOYADI;
+		
+		private string _HAREKET_TABLO;
+		
+		private string _PUANTAJ_TABLO;
+		
+		private System.Nullable<bool> _FM_ONAY;
+		
+		private System.Nullable<bool> _GUNLUK_IZIN_ONAY;
+		
+		private System.Nullable<bool> _SAATLIK_IZIN_ONAY;
+		
+		private System.Nullable<int> _DIL;
+		
+		private System.Nullable<int> _FONT;
+		
+		private System.Nullable<bool> _KOD_BAZLI_YETKI;
+		
+		private int _LOGICALREF;
+		
+		private System.Nullable<int> _AYLIK_ONAY_DERECE;
+		
+		private System.Nullable<bool> _EXCEL_TRANSFER;
+		
+		private string _DOMAIN_USERNAME;
+		
+		private System.Nullable<bool> _HAFTA_TATILI_ONAY;
+		
+		private System.Nullable<bool> _OFFLINE_CALISMA;
+		
+		private System.Nullable<bool> _HAREKET_GECMISISLEM;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDNOChanging(System.Nullable<int> value);
+    partial void OnIDNOChanged();
+    partial void OnADIChanging(string value);
+    partial void OnADIChanged();
+    partial void OnSIFREChanging(string value);
+    partial void OnSIFREChanged();
+    partial void OnNTADIChanging(string value);
+    partial void OnNTADIChanged();
+    partial void OnIZAHATChanging(string value);
+    partial void OnIZAHATChanged();
+    partial void OnDERECEChanging(string value);
+    partial void OnDERECEChanged();
+    partial void OnTOOLBARChanging(string value);
+    partial void OnTOOLBARChanged();
+    partial void OnOUTLOOKChanging(string value);
+    partial void OnOUTLOOKChanged();
+    partial void OnEXPLORERChanging(string value);
+    partial void OnEXPLORERChanged();
+    partial void OnTHEMEChanging(string value);
+    partial void OnTHEMEChanged();
+    partial void OnSTYLESHEETChanging(string value);
+    partial void OnSTYLESHEETChanged();
+    partial void OnADMINChanging(System.Nullable<char> value);
+    partial void OnADMINChanged();
+    partial void OnEMAILChanging(string value);
+    partial void OnEMAILChanged();
+    partial void OnADISOYADIChanging(string value);
+    partial void OnADISOYADIChanged();
+    partial void OnHAREKET_TABLOChanging(string value);
+    partial void OnHAREKET_TABLOChanged();
+    partial void OnPUANTAJ_TABLOChanging(string value);
+    partial void OnPUANTAJ_TABLOChanged();
+    partial void OnFM_ONAYChanging(System.Nullable<bool> value);
+    partial void OnFM_ONAYChanged();
+    partial void OnGUNLUK_IZIN_ONAYChanging(System.Nullable<bool> value);
+    partial void OnGUNLUK_IZIN_ONAYChanged();
+    partial void OnSAATLIK_IZIN_ONAYChanging(System.Nullable<bool> value);
+    partial void OnSAATLIK_IZIN_ONAYChanged();
+    partial void OnDILChanging(System.Nullable<int> value);
+    partial void OnDILChanged();
+    partial void OnFONTChanging(System.Nullable<int> value);
+    partial void OnFONTChanged();
+    partial void OnKOD_BAZLI_YETKIChanging(System.Nullable<bool> value);
+    partial void OnKOD_BAZLI_YETKIChanged();
+    partial void OnLOGICALREFChanging(int value);
+    partial void OnLOGICALREFChanged();
+    partial void OnAYLIK_ONAY_DERECEChanging(System.Nullable<int> value);
+    partial void OnAYLIK_ONAY_DERECEChanged();
+    partial void OnEXCEL_TRANSFERChanging(System.Nullable<bool> value);
+    partial void OnEXCEL_TRANSFERChanged();
+    partial void OnDOMAIN_USERNAMEChanging(string value);
+    partial void OnDOMAIN_USERNAMEChanged();
+    partial void OnHAFTA_TATILI_ONAYChanging(System.Nullable<bool> value);
+    partial void OnHAFTA_TATILI_ONAYChanged();
+    partial void OnOFFLINE_CALISMAChanging(System.Nullable<bool> value);
+    partial void OnOFFLINE_CALISMAChanged();
+    partial void OnHAREKET_GECMISISLEMChanging(System.Nullable<bool> value);
+    partial void OnHAREKET_GECMISISLEMChanged();
+    #endregion
+		
+		public KULLANICI()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDNO", DbType="Int")]
+		public System.Nullable<int> IDNO
+		{
+			get
+			{
+				return this._IDNO;
+			}
+			set
+			{
+				if ((this._IDNO != value))
+				{
+					this.OnIDNOChanging(value);
+					this.SendPropertyChanging();
+					this._IDNO = value;
+					this.SendPropertyChanged("IDNO");
+					this.OnIDNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ADI", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ADI
+		{
+			get
+			{
+				return this._ADI;
+			}
+			set
+			{
+				if ((this._ADI != value))
+				{
+					this.OnADIChanging(value);
+					this.SendPropertyChanging();
+					this._ADI = value;
+					this.SendPropertyChanged("ADI");
+					this.OnADIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SIFRE", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		public string SIFRE
+		{
+			get
+			{
+				return this._SIFRE;
+			}
+			set
+			{
+				if ((this._SIFRE != value))
+				{
+					this.OnSIFREChanging(value);
+					this.SendPropertyChanging();
+					this._SIFRE = value;
+					this.SendPropertyChanged("SIFRE");
+					this.OnSIFREChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NTADI", DbType="VarChar(20)")]
+		public string NTADI
+		{
+			get
+			{
+				return this._NTADI;
+			}
+			set
+			{
+				if ((this._NTADI != value))
+				{
+					this.OnNTADIChanging(value);
+					this.SendPropertyChanging();
+					this._NTADI = value;
+					this.SendPropertyChanged("NTADI");
+					this.OnNTADIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IZAHAT", DbType="VarChar(50)")]
+		public string IZAHAT
+		{
+			get
+			{
+				return this._IZAHAT;
+			}
+			set
+			{
+				if ((this._IZAHAT != value))
+				{
+					this.OnIZAHATChanging(value);
+					this.SendPropertyChanging();
+					this._IZAHAT = value;
+					this.SendPropertyChanged("IZAHAT");
+					this.OnIZAHATChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DERECE", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		public string DERECE
+		{
+			get
+			{
+				return this._DERECE;
+			}
+			set
+			{
+				if ((this._DERECE != value))
+				{
+					this.OnDERECEChanging(value);
+					this.SendPropertyChanging();
+					this._DERECE = value;
+					this.SendPropertyChanged("DERECE");
+					this.OnDERECEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOOLBAR", DbType="Char(5)")]
+		public string TOOLBAR
+		{
+			get
+			{
+				return this._TOOLBAR;
+			}
+			set
+			{
+				if ((this._TOOLBAR != value))
+				{
+					this.OnTOOLBARChanging(value);
+					this.SendPropertyChanging();
+					this._TOOLBAR = value;
+					this.SendPropertyChanged("TOOLBAR");
+					this.OnTOOLBARChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OUTLOOK", DbType="Char(5)")]
+		public string OUTLOOK
+		{
+			get
+			{
+				return this._OUTLOOK;
+			}
+			set
+			{
+				if ((this._OUTLOOK != value))
+				{
+					this.OnOUTLOOKChanging(value);
+					this.SendPropertyChanging();
+					this._OUTLOOK = value;
+					this.SendPropertyChanged("OUTLOOK");
+					this.OnOUTLOOKChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EXPLORER", DbType="Char(5)")]
+		public string EXPLORER
+		{
+			get
+			{
+				return this._EXPLORER;
+			}
+			set
+			{
+				if ((this._EXPLORER != value))
+				{
+					this.OnEXPLORERChanging(value);
+					this.SendPropertyChanging();
+					this._EXPLORER = value;
+					this.SendPropertyChanged("EXPLORER");
+					this.OnEXPLORERChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THEME", DbType="VarChar(20)")]
+		public string THEME
+		{
+			get
+			{
+				return this._THEME;
+			}
+			set
+			{
+				if ((this._THEME != value))
+				{
+					this.OnTHEMEChanging(value);
+					this.SendPropertyChanging();
+					this._THEME = value;
+					this.SendPropertyChanged("THEME");
+					this.OnTHEMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STYLESHEET", DbType="VarChar(100)")]
+		public string STYLESHEET
+		{
+			get
+			{
+				return this._STYLESHEET;
+			}
+			set
+			{
+				if ((this._STYLESHEET != value))
+				{
+					this.OnSTYLESHEETChanging(value);
+					this.SendPropertyChanging();
+					this._STYLESHEET = value;
+					this.SendPropertyChanged("STYLESHEET");
+					this.OnSTYLESHEETChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ADMIN", DbType="Char(1)")]
+		public System.Nullable<char> ADMIN
+		{
+			get
+			{
+				return this._ADMIN;
+			}
+			set
+			{
+				if ((this._ADMIN != value))
+				{
+					this.OnADMINChanging(value);
+					this.SendPropertyChanging();
+					this._ADMIN = value;
+					this.SendPropertyChanged("ADMIN");
+					this.OnADMINChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="VarChar(100)")]
+		public string EMAIL
+		{
+			get
+			{
+				return this._EMAIL;
+			}
+			set
+			{
+				if ((this._EMAIL != value))
+				{
+					this.OnEMAILChanging(value);
+					this.SendPropertyChanging();
+					this._EMAIL = value;
+					this.SendPropertyChanged("EMAIL");
+					this.OnEMAILChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ADISOYADI", DbType="VarChar(100)")]
+		public string ADISOYADI
+		{
+			get
+			{
+				return this._ADISOYADI;
+			}
+			set
+			{
+				if ((this._ADISOYADI != value))
+				{
+					this.OnADISOYADIChanging(value);
+					this.SendPropertyChanging();
+					this._ADISOYADI = value;
+					this.SendPropertyChanged("ADISOYADI");
+					this.OnADISOYADIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HAREKET_TABLO", DbType="VarChar(20)")]
+		public string HAREKET_TABLO
+		{
+			get
+			{
+				return this._HAREKET_TABLO;
+			}
+			set
+			{
+				if ((this._HAREKET_TABLO != value))
+				{
+					this.OnHAREKET_TABLOChanging(value);
+					this.SendPropertyChanging();
+					this._HAREKET_TABLO = value;
+					this.SendPropertyChanged("HAREKET_TABLO");
+					this.OnHAREKET_TABLOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PUANTAJ_TABLO", DbType="VarChar(20)")]
+		public string PUANTAJ_TABLO
+		{
+			get
+			{
+				return this._PUANTAJ_TABLO;
+			}
+			set
+			{
+				if ((this._PUANTAJ_TABLO != value))
+				{
+					this.OnPUANTAJ_TABLOChanging(value);
+					this.SendPropertyChanging();
+					this._PUANTAJ_TABLO = value;
+					this.SendPropertyChanged("PUANTAJ_TABLO");
+					this.OnPUANTAJ_TABLOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FM_ONAY", DbType="Bit")]
+		public System.Nullable<bool> FM_ONAY
+		{
+			get
+			{
+				return this._FM_ONAY;
+			}
+			set
+			{
+				if ((this._FM_ONAY != value))
+				{
+					this.OnFM_ONAYChanging(value);
+					this.SendPropertyChanging();
+					this._FM_ONAY = value;
+					this.SendPropertyChanged("FM_ONAY");
+					this.OnFM_ONAYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GUNLUK_IZIN_ONAY", DbType="Bit")]
+		public System.Nullable<bool> GUNLUK_IZIN_ONAY
+		{
+			get
+			{
+				return this._GUNLUK_IZIN_ONAY;
+			}
+			set
+			{
+				if ((this._GUNLUK_IZIN_ONAY != value))
+				{
+					this.OnGUNLUK_IZIN_ONAYChanging(value);
+					this.SendPropertyChanging();
+					this._GUNLUK_IZIN_ONAY = value;
+					this.SendPropertyChanged("GUNLUK_IZIN_ONAY");
+					this.OnGUNLUK_IZIN_ONAYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SAATLIK_IZIN_ONAY", DbType="Bit")]
+		public System.Nullable<bool> SAATLIK_IZIN_ONAY
+		{
+			get
+			{
+				return this._SAATLIK_IZIN_ONAY;
+			}
+			set
+			{
+				if ((this._SAATLIK_IZIN_ONAY != value))
+				{
+					this.OnSAATLIK_IZIN_ONAYChanging(value);
+					this.SendPropertyChanging();
+					this._SAATLIK_IZIN_ONAY = value;
+					this.SendPropertyChanged("SAATLIK_IZIN_ONAY");
+					this.OnSAATLIK_IZIN_ONAYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIL", DbType="Int")]
+		public System.Nullable<int> DIL
+		{
+			get
+			{
+				return this._DIL;
+			}
+			set
+			{
+				if ((this._DIL != value))
+				{
+					this.OnDILChanging(value);
+					this.SendPropertyChanging();
+					this._DIL = value;
+					this.SendPropertyChanged("DIL");
+					this.OnDILChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FONT", DbType="Int")]
+		public System.Nullable<int> FONT
+		{
+			get
+			{
+				return this._FONT;
+			}
+			set
+			{
+				if ((this._FONT != value))
+				{
+					this.OnFONTChanging(value);
+					this.SendPropertyChanging();
+					this._FONT = value;
+					this.SendPropertyChanged("FONT");
+					this.OnFONTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KOD_BAZLI_YETKI", DbType="Bit")]
+		public System.Nullable<bool> KOD_BAZLI_YETKI
+		{
+			get
+			{
+				return this._KOD_BAZLI_YETKI;
+			}
+			set
+			{
+				if ((this._KOD_BAZLI_YETKI != value))
+				{
+					this.OnKOD_BAZLI_YETKIChanging(value);
+					this.SendPropertyChanging();
+					this._KOD_BAZLI_YETKI = value;
+					this.SendPropertyChanged("KOD_BAZLI_YETKI");
+					this.OnKOD_BAZLI_YETKIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOGICALREF", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int LOGICALREF
+		{
+			get
+			{
+				return this._LOGICALREF;
+			}
+			set
+			{
+				if ((this._LOGICALREF != value))
+				{
+					this.OnLOGICALREFChanging(value);
+					this.SendPropertyChanging();
+					this._LOGICALREF = value;
+					this.SendPropertyChanged("LOGICALREF");
+					this.OnLOGICALREFChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AYLIK_ONAY_DERECE", DbType="Int")]
+		public System.Nullable<int> AYLIK_ONAY_DERECE
+		{
+			get
+			{
+				return this._AYLIK_ONAY_DERECE;
+			}
+			set
+			{
+				if ((this._AYLIK_ONAY_DERECE != value))
+				{
+					this.OnAYLIK_ONAY_DERECEChanging(value);
+					this.SendPropertyChanging();
+					this._AYLIK_ONAY_DERECE = value;
+					this.SendPropertyChanged("AYLIK_ONAY_DERECE");
+					this.OnAYLIK_ONAY_DERECEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EXCEL_TRANSFER", DbType="Bit")]
+		public System.Nullable<bool> EXCEL_TRANSFER
+		{
+			get
+			{
+				return this._EXCEL_TRANSFER;
+			}
+			set
+			{
+				if ((this._EXCEL_TRANSFER != value))
+				{
+					this.OnEXCEL_TRANSFERChanging(value);
+					this.SendPropertyChanging();
+					this._EXCEL_TRANSFER = value;
+					this.SendPropertyChanged("EXCEL_TRANSFER");
+					this.OnEXCEL_TRANSFERChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOMAIN_USERNAME", DbType="VarChar(100)")]
+		public string DOMAIN_USERNAME
+		{
+			get
+			{
+				return this._DOMAIN_USERNAME;
+			}
+			set
+			{
+				if ((this._DOMAIN_USERNAME != value))
+				{
+					this.OnDOMAIN_USERNAMEChanging(value);
+					this.SendPropertyChanging();
+					this._DOMAIN_USERNAME = value;
+					this.SendPropertyChanged("DOMAIN_USERNAME");
+					this.OnDOMAIN_USERNAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HAFTA_TATILI_ONAY", DbType="Bit")]
+		public System.Nullable<bool> HAFTA_TATILI_ONAY
+		{
+			get
+			{
+				return this._HAFTA_TATILI_ONAY;
+			}
+			set
+			{
+				if ((this._HAFTA_TATILI_ONAY != value))
+				{
+					this.OnHAFTA_TATILI_ONAYChanging(value);
+					this.SendPropertyChanging();
+					this._HAFTA_TATILI_ONAY = value;
+					this.SendPropertyChanged("HAFTA_TATILI_ONAY");
+					this.OnHAFTA_TATILI_ONAYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OFFLINE_CALISMA", DbType="Bit")]
+		public System.Nullable<bool> OFFLINE_CALISMA
+		{
+			get
+			{
+				return this._OFFLINE_CALISMA;
+			}
+			set
+			{
+				if ((this._OFFLINE_CALISMA != value))
+				{
+					this.OnOFFLINE_CALISMAChanging(value);
+					this.SendPropertyChanging();
+					this._OFFLINE_CALISMA = value;
+					this.SendPropertyChanged("OFFLINE_CALISMA");
+					this.OnOFFLINE_CALISMAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HAREKET_GECMISISLEM", DbType="Bit")]
+		public System.Nullable<bool> HAREKET_GECMISISLEM
+		{
+			get
+			{
+				return this._HAREKET_GECMISISLEM;
+			}
+			set
+			{
+				if ((this._HAREKET_GECMISISLEM != value))
+				{
+					this.OnHAREKET_GECMISISLEMChanging(value);
+					this.SendPropertyChanging();
+					this._HAREKET_GECMISISLEM = value;
+					this.SendPropertyChanged("HAREKET_GECMISISLEM");
+					this.OnHAREKET_GECMISISLEMChanged();
 				}
 			}
 		}

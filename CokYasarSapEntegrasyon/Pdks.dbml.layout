@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 17.625" name="Pdks">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 17.25" name="Pdks">
   <DataContextMoniker Name="/PdksDataContext" />
   <nestedChildShapes>
-    <classShape Id="e5a95de2-e0db-4989-ab39-a0b42961ef04" absoluteBounds="5, 1.375, 2, 16.001202799479167">
+    <classShape Id="e5a95de2-e0db-4989-ab39-a0b42961ef04" absoluteBounds="5, 1, 2, 16.001202799479167">
       <DataClassMoniker Name="/PdksDataContext/PERSONEL1" />
       <nestedChildShapes>
-        <elementListCompartment Id="09508d66-64eb-4855-b862-243a2a565db9" absoluteBounds="5.0150000000000006, 1.835, 1.9700000000000002, 15.441202799479166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="09508d66-64eb-4855-b862-243a2a565db9" absoluteBounds="5.0150000000000006, 1.46, 1.9700000000000002, 15.441202799479166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="f4b64292-d18a-4d76-b85f-14347eed73f8" absoluteBounds="2.625, 1.375, 2, 2.5401025390625">
@@ -26,10 +26,10 @@
         <elementListCompartment Id="cd76a389-9231-4fab-a447-6c04b45cfc74" absoluteBounds="0.51500000000000012, 4.46, 1.9700000000000002, 12.172078450520832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d30a49e7-e1c5-45e5-a9ef-4d4675a1a251" absoluteBounds="1.75, 1.125, 2, 2.5401025390625">
+    <classShape Id="d30a49e7-e1c5-45e5-a9ef-4d4675a1a251" absoluteBounds="0.5, 0.875, 2, 2.5401025390625">
       <DataClassMoniker Name="/PdksDataContext/Nar_Log" />
       <nestedChildShapes>
-        <elementListCompartment Id="f4407611-eac0-464b-be5c-edca11bd25d6" absoluteBounds="1.7649999999999997, 1.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f4407611-eac0-464b-be5c-edca11bd25d6" absoluteBounds="0.51499999999999968, 1.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="32b1856b-68ab-4482-a6b5-c23820732603" absoluteBounds="3.75, 4.625, 2, 3.8862125651041666">
@@ -44,16 +44,16 @@
         <elementListCompartment Id="b31d71ad-85df-4a5f-a821-5275ce2c9bfe" absoluteBounds="6.515, 4.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b8bdfcf2-7146-4cd1-9bc0-89e20f0be239" absoluteBounds="3.5, 4.125, 2.125, 2.3478011067708335">
+    <classShape Id="b8bdfcf2-7146-4cd1-9bc0-89e20f0be239" absoluteBounds="1.75, 3.625, 2.125, 2.3478011067708335">
       <DataClassMoniker Name="/PdksDataContext/PERARSIV1" />
       <nestedChildShapes>
-        <elementListCompartment Id="81ded732-dcae-4456-9be6-6ce8331c97ad" absoluteBounds="3.515, 4.585, 2.0949999999999998, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="81ded732-dcae-4456-9be6-6ce8331c97ad" absoluteBounds="1.7650000000000001, 4.085, 2.0949999999999998, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="55d4c606-ae1f-4d39-8bf0-53f9997216bc" absoluteBounds="4, 0.875, 2, 2.7324039713541666">
+    <classShape Id="55d4c606-ae1f-4d39-8bf0-53f9997216bc" absoluteBounds="2, 0.5, 2, 2.7324039713541666">
       <DataClassMoniker Name="/PdksDataContext/ENT_SAATIZIN" />
       <nestedChildShapes>
-        <elementListCompartment Id="7d932640-6529-4f4e-baf1-af8961d4bcef" absoluteBounds="4.015, 1.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7d932640-6529-4f4e-baf1-af8961d4bcef" absoluteBounds="2.0149999999999997, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="6c0dd170-09b8-4494-a93f-fc6168309163" absoluteBounds="9.75, 2.125, 2, 1.9631982421875">
@@ -66,6 +66,12 @@
       <DataClassMoniker Name="/PdksDataContext/NARSOFT_SAP_POSTA" />
       <nestedChildShapes>
         <elementListCompartment Id="580c97be-540a-4cee-a881-16de47a079c7" absoluteBounds="7.64, 2.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea0123ba-6161-4d32-a455-532e4d8362b6" absoluteBounds="6.5, 6.5, 2, 6.3861311848958326">
+      <DataClassMoniker Name="/PdksDataContext/KULLANICI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef642d88-fbf5-4c5f-b408-cb60bfdabbc1" absoluteBounds="6.515, 6.96, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

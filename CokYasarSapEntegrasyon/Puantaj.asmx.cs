@@ -27,9 +27,8 @@ namespace CokYasarSapEntegrasyon
         }
 
         [WebMethod]
-        public List<PuantajModel> GetPuantaj(int ay, int yil, string personelNo, string personelAlani, string personelAltAlani, string sirketKodu)
+        public List<PuantajModel> GetPuantaj(int ay, int yil, string personelNo, string personelAlani, string personelAltAlani,string calisanAlani, string calisanAltAlani, string sirketKodu )
         {
-
             try
             {
                 _log.Log(new Nar_Log
@@ -45,6 +44,8 @@ namespace CokYasarSapEntegrasyon
                             PersonelNo = personelNo,
                             PersonelAlani = personelAlani,
                             PersonelAltAlani = personelAltAlani,
+                            CalisanAlani = calisanAlani,
+                            CalisanAltAlani=calisanAltAlani,
                             SirketKodu = sirketKodu,
 
                         }),
@@ -59,11 +60,16 @@ namespace CokYasarSapEntegrasyon
 
                 var lastDateOfMonth = LastDateOfMonth(ay, yil);
 
+                // MASRAF,kadro,BIRIM_KODU,SUBE_KODU
+                //MASRAF  = PERSONEL ALANI
+                //KADRO = PERSONEL ALT ALANI
+                //BIRIM_KODU = ÇALIŞAN GRUBU 
+                //SUBE_KODU = ÇALIŞAN ALT GRUBU 
                 var query = from puantaj in ctx.AYPUAN1s
                             join personel in ctx.PERSONEL1s on puantaj.PRSICIL equals personel.SICILNO
                             join cros in ctx.NARSOFT_SAP_CALKODUs on puantaj.CLKODU.ToString() equals cros.NARSOFT_KODU
                             where
-                            (puantaj.AY == ay && puantaj.YIL == yil) || personel.PERTIP == sirketKodu || personel.DEPART == personelAlani || personel.ALTDEPART == personelAltAlani
+                            (puantaj.AY == ay && puantaj.YIL == yil) || personel.PERTIP == sirketKodu || personel.MASRAF == personelAlani || personel.KADRO == personelAltAlani || personel.BIRIM_KODU == calisanAlani || personel.SUBE_KODU == calisanAltAlani
                             select new PuantajModel
                             {
                                 AdSoyad = string.Format("{0} {1}", personel.ADI, personel.SOYADI),
@@ -74,25 +80,33 @@ namespace CokYasarSapEntegrasyon
                                 BirimKod = cros.ZAMAN_KOD,
                                 BirimTanim = cros.ZAMAN_BIRIM,
                                 Tarih = personel.ISCIKT == null ? lastDateOfMonth : personel.ISCIKT.Value.AddDays(-1),
-                                PersonelAlani = personel.DEPART.Trim(),
-                                PersonelAltAlani = (personel.ALTDEPART == null) ? string.Empty : personel.ALTDEPART.Trim(),
-                                SirketKodu = personel.PERTIP.Trim()
+                                PersonelAlani = personel.MASRAF.Trim(),
+                                PersonelAltAlani = (personel.KADRO == null) ? string.Empty : personel.KADRO.Trim(),
+                                SirketKodu = personel.PERTIP.Trim(),
+                                CalisanAlani = personel.BIRIM_KODU.Trim(),
+                                CalisanAltAlani = (personel.SUBE_KODU == null) ? string.Empty : personel.SUBE_KODU.Trim()
 
                             };
 
                 _listPuantaj = query.ToList();
                 // if (personelNo != "") bu alan sap den null olarak geliyor. Bizim testlerde "" ile kontrol gerekiyor.
                 if (personelNo != null)
-                    _listPuantaj = _listPuantaj.Where(x => x.PersonelNo == personelNo).ToList();
+                    _listPuantaj = _listPuantaj.Where(x => x.PersonelNo == personelNo.TrimEnd()).ToList();
 
                 if (personelAlani != null)
-                    _listPuantaj = _listPuantaj.Where(x => x.PersonelAlani == personelAlani).ToList();
+                    _listPuantaj = _listPuantaj.Where(x => x.PersonelAlani == personelAlani.TrimEnd()).ToList();
 
                 if (personelAltAlani != null)
-                    _listPuantaj = _listPuantaj.Where(x => x.PersonelAltAlani == personelAltAlani).ToList();
+                    _listPuantaj = _listPuantaj.Where(x => x.PersonelAltAlani == personelAltAlani.TrimEnd()).ToList();
+
+                if (calisanAlani != null)
+                    _listPuantaj = _listPuantaj.Where(x => x.CalisanAlani == calisanAlani.TrimEnd()).ToList();
+
+                if (calisanAltAlani != null)
+                    _listPuantaj = _listPuantaj.Where(x => x.CalisanAltAlani == calisanAltAlani.TrimEnd()).ToList();
 
                 if (sirketKodu != null)
-                    _listPuantaj = _listPuantaj.Where(x => x.SirketKodu == sirketKodu).ToList();
+                    _listPuantaj = _listPuantaj.Where(x => x.SirketKodu == sirketKodu.TrimEnd()).ToList();
 
 
                 _log.Log(new Nar_Log
@@ -108,6 +122,8 @@ namespace CokYasarSapEntegrasyon
                            PersonelNo = personelNo,
                            PersonelAlani = personelAlani,
                            PersonelAltAlani = personelAltAlani,
+                           CalisanAlani = calisanAlani,
+                           CalisanAltAlani = calisanAltAlani,
                            SirketKodu = sirketKodu,
 
                        }),

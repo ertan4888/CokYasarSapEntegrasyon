@@ -19,6 +19,7 @@ namespace CokYasarSapEntegrasyon
         public string PersonelAlani { get; set; }
         public string PersonelAltAlani { get; set; }
         public string SirketKodu { get; set; }
-     
+        public string CalisanAlani { get; set; }
+        public string CalisanAltAlani { get; set; }
     }
 }

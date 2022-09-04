@@ -195,7 +195,7 @@ namespace CokYasarSapEntegrasyon
                 foreach (var personel in get_SapVendor_response.ET_OUT)
                 {
                     var ent_Personel = new ENT_PERSONEL_TEST();
-                    ent_Personel.SICILNO = personel.PERNR;
+                    ent_Personel.SICILNO = personel?.PERNR.TrimStart('0');
                     ent_Personel.ADI = personel.VORNA;
                     ent_Personel.SOYADI = personel.NACHN;
                     ent_Personel.PERSONEL_TIPI_KODU = personel.BUKRS;
@@ -211,21 +211,19 @@ namespace CokYasarSapEntegrasyon
                     ent_Personel.CIKIS_NEDENI_KODU = personel.MASSG;
                     ent_Personel.CIKIS_NEDENI_ADI = personel.MGTXT;
                     ent_Personel.TOPLULUGA_GIRIS_TARIHI = (personel.TOPDT != "0000-00-00") ? DateTime.Parse(personel.TOPDT) : (DateTime?)null;
-                    ent_Personel.AMIR1_KODU = personel.YNTSCL;
+                    ent_Personel.AMIR1_KODU = personel?.YNTSCL.TrimStart('0');
                     ent_Personel.AMIR1_ADI = personel.YNTAD;
-                    ent_Personel.AMIR2_KODU = personel.YNTSCL2;
+                    ent_Personel.AMIR2_KODU = personel?.YNTSCL2.TrimStart('0');
                     ent_Personel.AMIR2_ADI = personel.YNTAD2;
-                    ent_Personel.AMIR3_KODU = personel.YNTSCL3;
+                    ent_Personel.AMIR3_KODU = personel?.YNTSCL3.TrimStart('0'); 
                     ent_Personel.AMIR3_ADI = personel.YNTAD3;
-                    ent_Personel.AMIR4_KODU = personel.YNTSCL4;
+                    ent_Personel.AMIR4_KODU = personel?.YNTSCL4.TrimStart('0'); 
                     ent_Personel.AMIR4_ADI = personel.YNTAD4;
-                    ent_Personel.AMIR5_KODU = personel.YNTSCL5;
+                    ent_Personel.AMIR5_KODU = personel?.YNTSCL5.TrimStart('0');
                     ent_Personel.AMIR5_ADI = personel.YNTAD5;
-                    ent_Personel.AMIR5_KODU = personel.YNTSCL5;
-                    ent_Personel.AMIR5_ADI = personel.YNTAD5;
-                    ent_Personel.MESLEK_KODU = personel.PERSG; //Çalışan  Grubu Kodu
+                    ent_Personel.MESLEK_KODU = personel.PERSG.TrimStart('0'); //Çalışan  Grubu Kodu
                     ent_Personel.MESLEK_ADI = personel.PERSG_TX;//Çalışan  Grubu Tanımı
-                    ent_Personel.GOREV_KODU = personel.PLANS; // Personel PozisyonKodu
+                    ent_Personel.GOREV_KODU = personel?.PLANS.TrimStart('0'); // Personel PozisyonKodu
                     ent_Personel.GOREV_ADI = personel.PLNTX;// Personel Tanımı
                     ent_Personel.KADRO_KODU = personel.PERSK;//Çalışan Alt Grubu Kodu
                     ent_Personel.KADRO_ADI = personel.PTEXT; //Çalışan Alt Grubu Tanım
