@@ -45,7 +45,7 @@ namespace CokYasarSapEntegrasyon
                 {
                     DirectoryEntry directoryEntryItem = item.GetDirectoryEntry();
 
-                    var aasAMAccountName = directoryEntryItem.Properties["sAMAccountName"].Value;
+                    var aasAMAccountName = directoryEntryItem.Properties["sAMAccountName"].Value;//
                     var userName = directoryEntryItem.Properties["displayName"].Value;
                     var userPassword = directoryEntryItem.Properties["password"].Value;
 
